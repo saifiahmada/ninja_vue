@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Two Way Binding Data</title>
+</head>
+<body>
+    <div id="root">
+        <h1>Dua cara binding data</h1>
+        <ul>
+            <li>v-model</li>
+            <li>double kurung kurawal {{  }}</li>
+
+        </ul>
+        <label>Nama</label>
+        <input type="text" v-model="nama">
+        <br>
+        <span>{{ nama }}</span>
+    </div>
+
+    <script src="vue.js"></script>
+    <script>
+        new Vue({
+            el: '#root',
+            data: {
+                nama: ''
+            }
+        });
+    </script>
+</body>
+</html>

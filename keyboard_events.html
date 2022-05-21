@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Keyboard Events</title>
+</head>
+<body>
+    <div id="root">
+        <h1>Keyboard Events</h1>
+        <label>Nama</label>
+        <input type="text" @keyup="logNama">
+        <label>Alamat</label>
+        <input type="text" @keyup="logAlamat">
+    </div>
+
+    <script src="vue.js"></script>
+    <script>
+        new Vue({
+            el: '#root',
+            data: {
+                nama: '',
+                alamat: ''
+            },
+            methods: {
+                logNama() {
+                    console.log('you entered nama');
+                },
+                logAlamat() {
+                    console.log('you entered alamat');
+                }
+            }
+        });
+    </script>
+</body>
+</html>

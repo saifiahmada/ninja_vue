@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Event Click Button</title>
+    <style>
+        #canvas {
+            width: 600px;
+            padding: 200px 20px;
+            text-align: center;
+            border: 1px solid #333;
+        }
+    </style>
+</head>
+<body>
+    <div id="root">
+        <h1>Event Click Button</h1>
+        <button v-on:click="umur++">Umur Increment</button>
+        <button @click="umur--">Umur Decrement</button>
+        <p>usia saya adalah {{ umur }}</p>
+        <button @click="tambah">Increment Function</button>
+        <button @click="kurang">Decrement Function</button>
+        <h1>Double Click Events</h1>
+        <button @dblclick="doubleKlik">Double Click : umur + 10</button>
+        <br>
+        <div id="canvas" @mousemove="updateXY">{{x}} , {{y}}</div>
+    </div>
+    <script src="vue.js"></script>
+    <script>
+        new Vue({
+            el: '#root',
+            data: {
+                umur: 30,
+                x: 0,
+                y:0
+            },
+            methods: {
+                tambah() {
+                    this.umur++;
+                },
+                kurang() {
+                    this.umur--;
+                },
+                doubleKlik() {
+                    this.umur += 10;
+                },
+                updateXY(event) {
+                    this.x = event.offsetX;
+                    this.y = event.offsetY;
+                }
+            }
+        });
+    </script>
+</body>
+</html>

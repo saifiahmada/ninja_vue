@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Ninja Vue</title>
+</head>
+<body>
+	<div id="vue-app">
+		<h1>{{ greet('malam') }}</h1>
+		<h1>{{ name }}</h1>
+		<h1>{{ address }}</h1>
+	</div>
+
+	<script src="vue.js"></script>
+	<script>
+		new Vue({
+			el: '#vue-app',
+			data: {
+				name: 'Saifi Ahmada',
+				address: 'Banjarmasin'
+			},
+			methods: {
+				greet(waktu) {
+					return this.name + ' Selamat ' + waktu
+				}
+			}
+		});
+	</script>
+</body>
+</html>
