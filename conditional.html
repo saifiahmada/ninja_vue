@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Conditional</title>
+</head>
+<body>
+    <div id="root">
+        <h1>Conditionals</h1>
+        <button @click="error = !error">Toggle Error</button>
+        <button @click="success = !success">Toggle Success</button>
+        <!--
+        <p v-if="error">Error true</p>
+        <p v-if="success">Sukses true</p>
+        -->
+        <!--
+        <p v-if="error">Error true</p>
+        <p v-if-else="success">Sukses</p>
+        -->
+        <p v-show="error">Error</p>
+        <p v-show="success">sukses</p>
+    </div>
+
+    <script src="vue.js"></script>
+    <script>
+        new Vue({
+            el: '#root',
+            data: {
+                error: false,
+                success: false
+            }
+        });
+    </script>
+</body>
+</html>
