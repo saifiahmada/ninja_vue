@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Intro Component</title>
+</head>
+<body>
+    <h1>Components</h1>
+    <div id="root1">
+        <h2>Vue App One</h2>
+        <greeting></greeting>
+    </div>
+    <div id="root2">
+        <h2>Vue App Two</h2>
+        <greeting></greeting>
+    </div>
+    <script src="vue.js"></script>
+    <script>
+        Vue.component('greeting', {
+            template: '<p>Hey there, I am a re-useable component, name {{ name }} <button @click="changeName">Change Name</button></p>',
+            data: function() {
+                return {
+                    name: 'Yoshi'
+                }
+            },
+            methods: {
+                changeName() {
+                    this.name = 'Mario';
+                }
+            }
+        });
+        new Vue({
+            el: '#root1'
+        });
+
+        new Vue({
+            el: '#root2'
+        });
+    </script>
+</body>
+</html>

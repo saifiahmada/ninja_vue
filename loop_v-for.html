@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Loop v-for</title>
+</head>
+<body>
+    <div id="root">
+        <h1>Looping dengan List v-for</h1>
+        <ul>
+            <li v-for="t in tokoh">{{ t }}</li>
+        </ul>
+        <h1>Looping List of Ninjas to ninja</h1>
+        <ul>
+            <li v-for="ninja in ninjas">{{ninja.name}} - {{ ninja.age}}</li>
+        </ul>
+        <h1>Looping List of Ninjas to ninja with index</h1>
+        <ul>
+            <li v-for="(ninja, index) in ninjas">{{ index }} {{ninja.name}} - {{ ninja.age}}</li>
+        </ul>
+        <h1>Looping in div</h1>
+        <div v-for="(ninja, index) in ninjas">
+            <h3>{{ index}} . {{ ninja.name }}</h3>
+            <p>{{ ninja.age }}</p>
+        </div>
+        <h1>Looping in template</h1>
+        <template v-for="(ninja, index) in ninjas">
+            <h3>{{ index}} . {{ ninja.name }}</h3>
+            <p>{{ ninja.age }}</p>
+        </template>
+        <h1>Looping in template div</h1>
+        <template v-for="ninja in ninjas">
+            <div v-for="(val, key) in ninja">
+                <p>{{ key }} - {{val}}</p>
+            </div>
+        </template>
+    </div>
+
+    <script src="vue.js"></script>
+    <script>
+        new Vue({
+            el: '#root',
+            data: {
+                tokoh: ['Mario','Luigi','Yoshi','Bowser'],
+                ninjas: [
+                    {name: 'Ryu' , age: 25 },
+                    {name: 'Yoshi' , age: 35 },
+                    {name: 'Ken' , age: 55 }
+                ]
+            },
+            methods: {
+
+            },
+            computed: {
+
+            }
+        });
+    </script>
+</body>
+</html>
