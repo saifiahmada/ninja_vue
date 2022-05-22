@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dynamic CSS</title>
+    <style>
+        span {
+            background: red;
+            display: inline-block;
+            padding: 10px;
+            color: #fff;
+            margin: 10px 0;
+        }
+
+        .available span {
+            background: green;
+        }
+
+        .nearby span:after {
+            content: "nearby";
+            margin-left: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="root">
+        <h1>Dymanic CSS</h1>
+        <h2>Example 1</h2>
+        <!--
+        <div @click="available = !available" :class="{ available: available }">
+            <span>Saifi Ahmada</span>
+        </div>
+        -->
+        <h2>Example 2</h2>
+        <button @click="nearby = !nearby">Toggle nearby</button>
+        <button @click="available = !available">Toggle Available</button>
+        <div v-bind:class="compClasses">
+            <span>Saifi Ahmada</span>
+        </div>
+    </div>
+
+    <script src="vue.js"></script>
+    <script>
+        new Vue({
+            el: '#root',
+            data: {
+                available: false,
+                nearby: false
+            },
+            methods: {
+
+            },
+            computed: {
+                compClasses() {
+                    return {
+                        available: this.available,
+                        nearby: this.nearby
+
+                    }
+                }
+            }
+
+        });
+    </script>
+</body>
+</html>
